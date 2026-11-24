@@ -1,1 +1,397 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#063b2a">
+  <meta name="description" content="EWF Renewable Energy Studio — practical solar calculators, project estimates and clean-energy learning tools by EWF | EMIF.">
+  <title>EWF Renewable Energy Studio | Practical Solar Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root{--green:#00843d;--green2:#00a651;--deep:#063b2a;--gold:#d4a017;--gold2:#f3c64d;--ink:#10251c;--muted:#66756d;--paper:#f5f8f5;--line:#e1e9e3;--white:#fff;--shadow:0 18px 50px rgba(4,45,29,.09)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:88px} body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.6} h1,h2,h3,h4,.brand{font-family:Manrope,sans-serif;letter-spacing:-.035em} a{text-decoration:none}
+    .navbar{background:rgba(6,59,42,.97);backdrop-filter:blur(14px);box-shadow:0 5px 24px #062f2230}.navbar-brand{font-family:Manrope;font-weight:800;color:#fff!important;letter-spacing:-.04em}.brand-mark{display:inline-grid;place-items:center;width:37px;height:37px;border-radius:11px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--deep);font-weight:900;margin-right:9px}.nav-link{color:#dcebe2!important;font-size:.92rem;font-weight:600}.nav-link:hover{color:var(--gold2)!important}.navbar-toggler{border-color:#ffffff55}.navbar-toggler-icon{filter:invert(1)}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 18%,#00a65155,transparent 27%),linear-gradient(120deg,#052f23 0%,#064b32 58%,#087541 100%);color:#fff;padding:90px 0 76px}.hero:after{content:"";position:absolute;width:460px;height:460px;border:1px solid #ffffff18;border-radius:50%;right:-130px;bottom:-300px;box-shadow:0 0 0 55px #ffffff08,0 0 0 110px #ffffff06}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #ffffff35;background:#ffffff12;color:#f7d978;border-radius:50px;padding:7px 13px;font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}.hero h1{font-size:clamp(2.5rem,6vw,4.8rem);font-weight:800;line-height:1.04;margin:22px 0}.hero h1 span{color:var(--gold2)}.hero p{max-width:660px;color:#d9e9df;font-size:1.1rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn-gold{background:var(--gold2);color:#173b2a;border:0;font-weight:800;padding:12px 20px;border-radius:12px}.btn-gold:hover{background:#ffe18a;color:#173b2a}.btn-outline-light{border-radius:12px;padding:12px 20px;font-weight:700}.hero-panel{background:#ffffff12;border:1px solid #ffffff2b;border-radius:22px;padding:25px;backdrop-filter:blur(12px);box-shadow:0 20px 60px #001b1233}.hero-panel .metric{font-size:2rem;font-weight:800;color:var(--gold2);font-family:Manrope}.hero-panel small{color:#d5e7dc}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.hero-grid div{padding:14px;border-radius:14px;background:#ffffff0d}.hero-grid strong{display:block;font-size:.95rem}.hero-grid span{font-size:.8rem;color:#c8ddd0}
+    .section{padding:76px 0}.section-head{max-width:720px;margin-bottom:30px}.kicker{color:var(--green);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.section h2{font-weight:800;font-size:clamp(1.8rem,4vw,2.65rem);margin:8px 0 12px}.section-head p{color:var(--muted);margin:0}.tool-card,.panel,.result-card,.feature-card{background:var(--white);border:1px solid var(--line);border-radius:19px;box-shadow:0 7px 25px rgba(4,45,29,.035)}.tool-card{padding:23px;height:100%;transition:.2s}.tool-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.tool-icon{width:46px;height:46px;border-radius:14px;background:#e8f5ec;color:var(--green);display:grid;place-items:center;font-size:1.35rem;margin-bottom:15px}.tool-card h3{font-size:1.1rem;font-weight:800}.tool-card p{font-size:.9rem;color:var(--muted);margin:0}.tool-card a{display:inline-block;margin-top:15px;color:var(--green);font-weight:800;font-size:.88rem}
+    .panel{padding:clamp(19px,3vw,30px)}.panel-title{display:flex;align-items:flex-start;gap:13px;margin-bottom:20px}.panel-title .tool-icon{flex:0 0 46px;margin:0}.panel-title h3{font-size:1.25rem;font-weight:800;margin:0 0 4px}.panel-title p{color:var(--muted);font-size:.88rem;margin:0}.form-label{font-size:.86rem;font-weight:700;color:#34483d;margin-bottom:6px}.form-control,.form-select{border:1px solid #d9e4dc;border-radius:10px;padding:10px 12px;min-height:45px;background-color:#fff}.form-control:focus,.form-select:focus{border-color:var(--green2);box-shadow:0 0 0 .2rem #00a6511a}.form-text{font-size:.77rem;color:#77867d}.btn-primary{background:var(--green);border-color:var(--green);border-radius:10px;font-weight:700;padding:10px 16px}.btn-primary:hover{background:var(--deep);border-color:var(--deep)}.btn-soft{background:#eaf5ed;color:var(--green);border:1px solid #d4e9da;border-radius:10px;font-weight:700}.btn-soft:hover{background:#d9efdf;color:var(--deep)}.result-card{padding:18px;background:linear-gradient(145deg,#f4faf5,#fff);height:100%}.result-label{font-size:.76rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em}.result-value{font-family:Manrope;font-size:1.55rem;font-weight:800;color:var(--deep);line-height:1.25;margin:5px 0}.result-note{font-size:.78rem;color:var(--muted)}.table thead th{font-size:.77rem;color:#63736a;text-transform:uppercase;letter-spacing:.04em;border-bottom-color:var(--line)}.table td{vertical-align:middle;font-size:.88rem}.remove-row{border:0;background:transparent;color:#b34b4b;font-size:1.2rem}.alert-note{background:#fff8e7;border:1px solid #f3e3b6;color:#70571a;border-radius:12px;padding:12px 14px;font-size:.83rem}.success-note{background:#edf8f0;border:1px solid #d7ebdc;color:#285d3c;border-radius:12px;padding:12px 14px;font-size:.83rem}
+    .currency-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}.currency-panel h3{font-size:1rem;font-weight:800}.small-muted{color:var(--muted);font-size:.8rem}.report{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}.report-empty{color:var(--muted);text-align:center;padding:35px 10px}.report h3{font-weight:800}.report-row{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.9rem}.report-row strong{text-align:right}.feature-card{padding:23px;height:100%}.feature-card h3{font-size:1.05rem;font-weight:800}.feature-card p{font-size:.88rem;color:var(--muted);margin:0}.cta{background:linear-gradient(120deg,#063b2a,#087541);color:#fff;border-radius:24px;padding:clamp(25px,5vw,48px);position:relative;overflow:hidden}.cta p{color:#d8e8dd;max-width:650px}.cta .btn{margin-top:8px}.footer{background:#04291e;color:#d7e5dc;padding:42px 0 22px}.footer a{color:var(--gold2)}.footer small{color:#a9c1b2}.disclaimer{font-size:.78rem;color:#738178}.back-top{position:fixed;right:17px;bottom:17px;width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:var(--gold2);color:var(--deep);font-weight:900;box-shadow:var(--shadow);z-index:50}
+    @media(max-width:767px){.hero{padding:68px 0 55px}.hero-panel{margin-top:25px}.section{padding:56px 0}.hero-grid{grid-template-columns:1fr 1fr}.navbar-brand{font-size:.94rem}.panel{padding:18px}.report-row{font-size:.83rem}}
+    @media print{body{background:#fff}body *{visibility:hidden!important}#project-summary,#project-summary *{visibility:visible!important}#project-summary{position:absolute;left:0;top:0;width:100%;display:block!important;padding:0!important}.navbar,.hero,.no-print,.footer,.back-top{display:none!important}.section{padding:10px 0}.container{max-width:100%!important}.report{border:0;padding:0;box-shadow:none}.report-empty{display:none}.print-only{display:block!important}}
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top no-print">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#home"><span class="brand-mark">E</span><span>EWF <span style="color:#f3c64d">RENEWABLE</span> STUDIO</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#tools">Tools</a></li><li class="nav-item"><a class="nav-link" href="#calculators">Calculators</a></li><li class="nav-item"><a class="nav-link" href="#project-summary">Project report</a></li><li class="nav-item"><a class="nav-link" href="#learn">Learn & build</a></li><li class="nav-item"><a class="nav-link" href="#donate">Donate</a></li><li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container position-relative" style="z-index:1">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7">
+        <span class="eyebrow">A practical digital resource by EWF | EMIF</span>
+        <h1>Power your ideas,<br><span>Design with confidence.</span></h1>
+        <p>Practical solar tools for every clean-energy scholar. Estimate your energy needs, explore system components and turn renewable-energy ideas into informed project plans.</p>
+        <div class="hero-actions"><a class="btn btn-gold" href="#calculators">Explore the calculators&nbsp; →</a><a class="btn btn-outline-light" href="#learn">Explore learning tools</a></div>
+        <div class="mt-4 small" style="color:#c5ddce">SCAN, CALCULATE, Innovate YOUR IDEAL PROJECTS..</div>
+      </div>
+      <div class="col-lg-5">
+        <div class="hero-panel">
+          <div class="d-flex justify-content-between align-items-center"><span class="small text-uppercase fw-bold" style="letter-spacing:.1em;color:#d7e8dc">Your solar planning workspace</span><span style="color:#f3c64d">✦</span></div>
+          <div class="metric mt-3">6 practical tools</div><small>From load assessment to a printable project summary</small>
+          <div class="hero-grid"><div><strong>Estimate</strong><span>Energy & system sizing</span></div><div><strong>Compare</strong><span>Costs in your currency</span></div><div><strong>Understand</strong><span>Key design assumptions</span></div><div><strong>Plan</strong><span>Save or print a report</span></div></div>
+          <div class="mt-3 small" style="color:#c8ddd0">No account, No registration, Browser-based tools..</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="section" id="tools">
+  <div class="container">
+    <div class="section-head"><div class="kicker">Your workspace</div><h2>Everything you need to start planning</h2><p>Use the tools individually or work through them in sequence. Your results are estimates to support learning and preliminary planning.</p></div>
+    <div class="row g-3">
+      <div class="col-sm-6 col-lg-4"><div class="tool-card"><div class="tool-icon">⚡</div><h3>Solar Load Estimator</h3><p>List appliances and usage hours to estimate connected load and daily energy consumption.</p><a href="#load-tool">Open tool →</a></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="tool-card"><div class="tool-icon">🔌</div><h3>Inverter Calculator</h3><p>Estimate inverter capacity using running load, surge allowance and design margin.</p><a href="#inverter-tool">Open tool →</a></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="tool-card"><div class="tool-icon">🔋</div><h3>Battery Calculator</h3><p>Estimate nominal battery energy and approximate backup runtime using usable capacity.</p><a href="#battery-tool">Open tool →</a></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="tool-card"><div class="tool-icon">☀️</div><h3>Solar Panel Calculator</h3><p>Estimate PV array size and panel quantity from daily energy and peak sun hours.</p><a href="#panel-tool">Open tool →</a></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="tool-card"><div class="tool-icon">〽️</div><h3>Charge Controller Estimator</h3><p>Estimate controller output current and review basic voltage/current compatibility.</p><a href="#controller-tool">Open tool →</a></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="tool-card"><div class="tool-icon">📋</div><h3>Solar Project Summary</h3><p>Bring your estimates together in a clear project snapshot you can print or save as PDF.</p><a href="#project-summary">Open report →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section pt-0" id="calculators">
+<div class="container">
+  <div class="section-head"><div class="kicker">Interactive calculators</div><h2>Build your preliminary solar estimate</h2><p>Enter realistic appliance and system details. Change any assumption to see how the estimate responds.</p></div>
+
+  <div class="panel mb-4" id="load-tool">
+    <div class="panel-title"><div class="tool-icon">⚡</div><div><h3>1. Solar Load Estimator</h3><p>Calculate running load and daily energy use from your appliances.</p></div></div>
+    <div class="row g-3 align-items-end mb-3">
+      <div class="col-md-4"><label class="form-label" for="applianceName">Appliance name</label><input class="form-control" id="applianceName" placeholder="e.g. LED bulb"></div>
+      <div class="col-6 col-md-2"><label class="form-label" for="applianceWatts">Power (W)</label><input class="form-control" id="applianceWatts" type="number" min="0" step="1" placeholder="e.g. 10"></div>
+      <div class="col-6 col-md-2"><label class="form-label" for="applianceQty">Quantity</label><input class="form-control" id="applianceQty" type="number" min="1" step="1" value="1"></div>
+      <div class="col-6 col-md-2"><label class="form-label" for="applianceHours">Hours/day</label><input class="form-control" id="applianceHours" type="number" min="0" max="24" step=".5" placeholder="e.g. 6"></div>
+      <div class="col-6 col-md-2"><button class="btn btn-primary w-100" id="addAppliance">Add appliance</button></div>
+    </div>
+    <div class="table-responsive"><table class="table align-middle" id="applianceTable"><thead><tr><th>Appliance</th><th>Qty</th><th>Watts each</th><th>Hours/day</th><th>Load</th><th>Energy/day</th><th></th></tr></thead><tbody id="applianceRows"><tr id="emptyAppliance"><td colspan="7" class="text-center text-secondary py-4">Add your first appliance to begin.</td></tr></tbody></table></div>
+    <div class="row g-3 mt-1">
+      <div class="col-sm-4"><div class="result-card"><div class="result-label">Total connected load</div><div class="result-value" id="totalLoad">0 W</div><div class="result-note">Sum of appliance running watts</div></div></div>
+      <div class="col-sm-4"><div class="result-card"><div class="result-label">Daily energy use</div><div class="result-value" id="dailyEnergy">0 Wh</div><div class="result-note">Estimated energy per day</div></div></div>
+      <div class="col-sm-4"><div class="result-card"><div class="result-label">Daily energy use</div><div class="result-value" id="dailyKwh">0 kWh</div><div class="result-note">Equivalent kilowatt-hours per day</div></div></div>
+    </div>
+    <div class="form-text mt-3">Use appliance input/running watts as appropriate. Motors, compressors and pumps can draw higher starting power than their normal running load.</div>
+  </div>
+
+  <div class="panel mb-4" id="inverter-tool">
+    <div class="panel-title"><div class="tool-icon">🔌</div><div><h3>2. Inverter Capacity Calculator</h3><p>Estimate a preliminary continuous inverter rating with a design margin.</p></div></div>
+    <div class="row g-3">
+      <div class="col-md-4"><label class="form-label" for="invLoad">Simultaneous running load (W)</label><input class="form-control" id="invLoad" type="number" min="0" value="0"></div>
+      <div class="col-md-4"><label class="form-label" for="invSurge">Surge allowance (%)</label><input class="form-control" id="invSurge" type="number" min="0" value="25"></div>
+      <div class="col-md-4"><label class="form-label" for="invMargin">Design margin (%)</label><input class="form-control" id="invMargin" type="number" min="0" value="25"></div>
+    </div>
+    <div class="row g-3 mt-1"><div class="col-md-4"><div class="result-card"><div class="result-label">Suggested preliminary rating</div><div class="result-value" id="invResult">0 W</div><div class="result-note">Running load × margin; not a surge rating guarantee</div></div></div><div class="col-md-8"><div class="alert-note h-100">Check the inverter's continuous output, surge duration, power factor, battery voltage and compatibility with the actual loads. A percentage allowance cannot replace appliance-specific starting-current data.</div></div></div>
+  </div>
+
+  <div class="panel mb-4" id="battery-tool">
+    <div class="panel-title"><div class="tool-icon">🔋</div><div><h3>3. Battery Capacity & Runtime Calculator</h3><p>Estimate nominal storage capacity and approximate backup duration.</p></div></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-6"><label class="form-label" for="batLoad">AC load (W)</label><input class="form-control" id="batLoad" type="number" min="0" value="500"></div>
+      <div class="col-md-3 col-6"><label class="form-label" for="batHours">Backup time (hours)</label><input class="form-control" id="batHours" type="number" min="0" step=".5" value="4"></div>
+      <div class="col-md-3 col-6"><label class="form-label" for="batVoltage">Battery bank voltage (V)</label><select class="form-select" id="batVoltage"><option>12</option><option>24</option><option selected>48</option><option>Other</option></select></div>
+      <div class="col-md-3 col-6"><label class="form-label" for="batCustomVoltage">Other voltage (V)</label><input class="form-control" id="batCustomVoltage" type="number" min="1" value="48"></div>
+      <div class="col-md-4"><label class="form-label" for="batDod">Allowed depth of discharge (%)</label><input class="form-control" id="batDod" type="number" min="1" max="100" value="80"></div>
+      <div class="col-md-4"><label class="form-label" for="batEff">Inverter efficiency (%)</label><input class="form-control" id="batEff" type="number" min="1" max="100" value="90"></div>
+      <div class="col-md-4"><label class="form-label" for="batMargin">Capacity margin (%)</label><input class="form-control" id="batMargin" type="number" min="0" value="15"></div>
+    </div>
+    <div class="row g-3 mt-1"><div class="col-md-4"><div class="result-card"><div class="result-label">Estimated nominal capacity</div><div class="result-value" id="batAh">0 Ah</div><div class="result-note">At selected battery voltage</div></div></div><div class="col-md-4"><div class="result-card"><div class="result-label">Nominal storage energy</div><div class="result-value" id="batKwh">0 kWh</div><div class="result-note">Nominal battery-bank energy</div></div></div><div class="col-md-4"><div class="result-card"><div class="result-label">Estimated usable DC energy</div><div class="result-value" id="batUsable">0 kWh</div><div class="result-note">After DoD and inverter efficiency</div></div></div></div>
+    <div class="form-text mt-3">Battery chemistry, temperature, discharge rate, ageing, BMS limits and manufacturer recommendations affect real capacity. Confirm these before selecting a battery bank.</div>
+  </div>
+
+  <div class="panel mb-4" id="panel-tool">
+    <div class="panel-title"><div class="tool-icon">☀️</div><div><h3>4. Solar PV Array Calculator</h3><p>Estimate array capacity and approximate module quantity from daily energy needs.</p></div></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-6"><label class="form-label" for="pvEnergy">Daily energy (kWh)</label><input class="form-control" id="pvEnergy" type="number" min="0" step=".1" value="3"></div>
+      <div class="col-md-3 col-6"><label class="form-label" for="pvSun">Peak sun hours/day</label><input class="form-control" id="pvSun" type="number" min=".1" step=".1" value="5"></div>
+      <div class="col-md-3 col-6"><label class="form-label" for="pvDerate">Overall system factor (%)</label><input class="form-control" id="pvDerate" type="number" min="1" max="100" value="80"></div>
+      <div class="col-md-3 col-6"><label class="form-label" for="pvModule">Panel rating (W)</label><input class="form-control" id="pvModule" type="number" min="1" value="550"></div>
+    </div>
+    <div class="row g-3 mt-1"><div class="col-md-4"><div class="result-card"><div class="result-label">Estimated PV array size</div><div class="result-value" id="pvSize">0 kWp</div><div class="result-note">Preliminary DC array rating</div></div></div><div class="col-md-4"><div class="result-card"><div class="result-label">Estimated panel quantity</div><div class="result-value" id="pvCount">0 panels</div><div class="result-note">Rounded up to whole modules</div></div></div><div class="col-md-4"><div class="result-card"><div class="result-label">Installed module capacity</div><div class="result-value" id="pvInstalled">0 W</div><div class="result-note">Based on whole modules</div></div></div></div>
+    <div class="form-text mt-3">Use a location-appropriate solar resource value. Shading, orientation, tilt, temperature, soiling, wiring and seasonal variation can materially change energy yield.</div>
+  </div>
+
+  <div class="panel mb-4" id="controller-tool">
+    <div class="panel-title"><div class="tool-icon">〽️</div><div><h3>5. Charge Controller Estimator</h3><p>Estimate controller output current and perform a simple current check.</p></div></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-6"><label class="form-label" for="ccPv">PV array power (W)</label><input class="form-control" id="ccPv" type="number" min="0" value="3000"></div>
+      <div class="col-md-3 col-6"><label class="form-label" for="ccBattery">Battery voltage (V)</label><select class="form-select" id="ccBattery"><option>12</option><option>24</option><option selected>48</option></select></div>
+      <div class="col-md-3 col-6"><label class="form-label" for="ccMargin">Current margin (%)</label><input class="form-control" id="ccMargin" type="number" min="0" value="25"></div>
+      <div class="col-md-3 col-6"><label class="form-label" for="ccRating">Controller rated output (A)</label><input class="form-control" id="ccRating" type="number" min="0" value="80"></div>
+    </div>
+    <div class="row g-3 mt-1"><div class="col-md-4"><div class="result-card"><div class="result-label">Estimated controller current</div><div class="result-value" id="ccCurrent">0 A</div><div class="result-note">Array watts ÷ battery voltage × margin</div></div></div><div class="col-md-4"><div class="result-card"><div class="result-label">Entered controller rating</div><div class="result-value" id="ccEntered">80 A</div><div class="result-note">Compare with calculated current</div></div></div><div class="col-md-4"><div class="result-card"><div class="result-label">Preliminary current check</div><div class="result-value" id="ccStatus">—</div><div class="result-note" id="ccStatusNote">Enter your system values</div></div></div></div>
+    <div class="alert-note mt-3">This is only a simplified output-current estimate. Verify the controller's maximum PV input voltage, short-circuit current limit, permitted array power, battery chemistry profile and manufacturer wiring rules. Cold-weather PV open-circuit voltage is especially important.</div>
+  </div>
+</div>
+</section>
+
+<section class="section pt-0" id="project-summary">
+<div class="container">
+  <div class="section-head"><div class="kicker">Your planning snapshot</div><h2>Solar project summary</h2><p>Review the estimates generated above and create a printable report. Add your project details and an optional budget estimate.</p></div>
+  <div class="row g-4">
+    <div class="col-lg-5">
+      <div class="panel h-100">
+        <h3 class="h5 fw-bold mb-3">Project details & cost planning</h3>
+        <div class="mb-3"><label class="form-label" for="projectName">Project name</label><input class="form-control" id="projectName" placeholder="e.g. Home solar project"></div>
+        <div class="mb-3"><label class="form-label" for="projectLocation">Location</label><input class="form-control" id="projectLocation" placeholder="City / region / country"></div>
+        <div class="mb-3"><label class="form-label" for="currency">Preferred currency</label><select class="form-select" id="currency">
+          <option value="NGN" data-symbol="₦" selected>NGN — Nigerian Naira (₦)</option><option value="USD" data-symbol="$">USD — US Dollar ($)</option><option value="GBP" data-symbol="£">GBP — British Pound (£)</option><option value="EUR" data-symbol="€">EUR — Euro (€)</option><option value="GHS" data-symbol="GH₵">GHS — Ghanaian Cedi (GH₵)</option><option value="KES" data-symbol="KSh">KES — Kenyan Shilling (KSh)</option><option value="ZAR" data-symbol="R">ZAR — South African Rand (R)</option><option value="INR" data-symbol="₹">INR — Indian Rupee (₹)</option><option value="CAD" data-symbol="C$">CAD — Canadian Dollar (C$)</option><option value="AUD" data-symbol="A$">AUD — Australian Dollar (A$)</option><option value="AED" data-symbol="د.إ">AED — UAE Dirham (د.إ)</option><option value="XOF" data-symbol="CFA">XOF — West African CFA Franc (CFA)</option><option value="XAF" data-symbol="FCFA">XAF — Central African CFA Franc (FCFA)</option><option value="TZS" data-symbol="TSh">TZS — Tanzanian Shilling (TSh)</option><option value="UGX" data-symbol="USh">UGX — Ugandan Shilling (USh)</option><option value="RWF" data-symbol="FRw">RWF — Rwandan Franc (FRw)</option><option value="JPY" data-symbol="¥">JPY — Japanese Yen (¥)</option><option value="CNY" data-symbol="¥">CNY — Chinese Yuan (¥)</option><option value="BRL" data-symbol="R$">BRL — Brazilian Real (R$)</option><option value="CHF" data-symbol="CHF">CHF — Swiss Franc (CHF)</option><option value="SAR" data-symbol="﷼">SAR — Saudi Riyal (﷼)</option><option value="QAR" data-symbol="ر.ق">QAR — Qatari Riyal (ر.ق)</option><option value="Other" data-symbol="">Other / custom</option>
+        </select></div>
+        <div class="mb-3" id="customCurrencyWrap" hidden><label class="form-label" for="customCurrency">Custom currency code or label</label><input class="form-control" id="customCurrency" placeholder="e.g. NPR"></div>
+        <div class="mb-3"><label class="form-label" for="estimatedCost">Estimated project cost (<span id="currencyLabel">NGN</span>)</label><input class="form-control" id="estimatedCost" type="number" min="0" step="any" placeholder="Enter supplier quote or budget"></div>
+        <div class="mb-3"><label class="form-label" for="costNotes">Cost notes (optional)</label><textarea class="form-control" id="costNotes" rows="2" placeholder="Equipment, installation, transport, taxes or quote validity"></textarea></div>
+        <div class="currency-panel mb-3">
+          <h3>Optional currency conversion</h3>
+          <p class="small-muted mb-2">If comparing a supplier quote in another currency, enter the exchange rate you want to use. This is a manual estimate, not a live market rate.</p>
+          <div class="row g-2 align-items-end"><div class="col-5"><label class="form-label" for="fromCurrency">Quote currency</label><select class="form-select" id="fromCurrency"><option>USD</option><option>NGN</option><option>EUR</option><option>GBP</option><option>GHS</option><option>KES</option><option>ZAR</option><option>INR</option><option>AED</option><option>XOF</option><option>XAF</option></select></div><div class="col-7"><label class="form-label" for="quoteAmount">Quote amount</label><input class="form-control" id="quoteAmount" type="number" min="0" placeholder="Amount"></div><div class="col-12"><label class="form-label" for="exchangeRate">Rate: 1 quote currency = how many preferred currency units?</label><input class="form-control" id="exchangeRate" type="number" min="0" step="any" placeholder="Enter rate manually"></div><div class="col-12"><div class="result-value fs-5 mb-0" id="convertedCost">Enter quote and rate</div><div class="small-muted">Conversion excludes bank fees, taxes, shipping and exchange-rate changes.</div></div></div>
+        </div>
+        <div class="d-grid gap-2"><button class="btn btn-primary" id="refreshReport">Update project summary</button><button class="btn btn-soft" id="printReport">Print / Save as PDF</button></div>
+      </div>
+    </div>
+    <div class="col-lg-7">
+      <div class="report" id="reportContent">
+        <div class="d-flex justify-content-between flex-wrap gap-2 align-items-start mb-3"><div><div class="kicker">EWF | EMIF</div><h3 class="h4 mb-1">Renewable Energy Project Snapshot</h3><div class="small-muted">EWF Renewable Energy Studio</div></div><div class="text-end small-muted" id="reportDate"></div></div>
+        <div id="reportDetails" class="mb-3"><div class="report-empty">Your project report will appear here. Enter your details and update the summary.</div></div>
+        <div class="alert-note mt-3">Preliminary planning estimate only. This report is not a certified engineering design, quotation, installation drawing or approval for electrical work.</div>
+        <div class="small-muted mt-3">Prepared with EWF Renewable Energy Studio • EWF | EMIF, eWorldfeeders Global Link</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="learn">
+<div class="container">
+  <div class="section-head"><div class="kicker">Learn • Build • Innovate</div><h2>Take your clean-energy knowledge further</h2><p>Use the studio alongside your learning, research and supervised practical work.</p></div>
+  <div class="row g-3">
+    <div class="col-md-4"><div class="feature-card"><div class="tool-icon">🧰</div><h3>DIY innovation pathway</h3><p>Explore safe learning projects such as small solar study lamps, mini PV demonstrations, energy monitoring and low-voltage educational experiments.</p></div></div>
+    <div class="col-md-4"><div class="feature-card"><div class="tool-icon">🌱</div><h3>Clean energy for communities</h3><p>Consider solar applications for homes, schools, small businesses, water pumping, agricultural processing and community services.</p></div></div>
+    <div class="col-md-4"><div class="feature-card"><div class="tool-icon">📐</div><h3>Professional design workflow</h3><p>Progress from load assessment to site survey, component datasheets, system design, protection coordination, installation and commissioning.</p></div></div>
+  </div>
+  <div class="alert-note mt-4"><strong>Important safety note:</strong> Live AC and DC systems, grid connections, high-current battery banks, rooftop/structural work and protection-device selection must be designed, checked and carried out by suitably qualified professionals. Follow applicable local codes, standards and manufacturer instructions. Do not use these estimates as a substitute for professional verification.</div>
+</div>
+</section>
+
+<section class="section pt-0" id="marketplace">
+<div class="container">
+  <div class="cta">
+    <div class="row align-items-center g-4"><div class="col-lg-8"><div class="kicker" style="color:#f3c64d">EWF | EMIF solutions</div><h2 class="fw-bold mt-2">Need help moving from estimate to implementation?</h2><p>EWF can help you explore renewable-energy solutions, technical guidance, training and project enquiries. Share your requirements so the team can understand your needs and discuss suitable next steps.</p><a class="btn btn-gold" id="productEnquiry" href="https://wa.me/2348062331041?text=Hello%20EWF%2C%20I%20used%20the%20EWF%20Renewable%20Energy%20Studio%20and%20would%20like%20to%20make%20a%20solar%20project%20enquiry." target="_blank" rel="noopener">Make a WhatsApp enquiry →</a></div><div class="col-lg-4"><div class="hero-panel"><div class="small text-uppercase fw-bold" style="color:#f3c64d">Explore EWF</div><h3 class="h5 mt-2 text-white">Practical innovation for people, businesses and communities.</h3><a class="text-white fw-bold" href="https://eworldfeedersgloballink.netlify.app" target="_blank" rel="noopener">Visit EWF website ↗</a><div class="mt-2"><a class="text-white fw-bold" href="https://ewfsolutionmarketplace.netlify.app" target="_blank" rel="noopener">Explore solution marketplace ↗</a></div></div></div></div>
+  </div>
+</div>
+</section>
+</main>
+
+
+<section class="section pt-0" id="donate">
+<div class="container">
+  <div class="section-head"><div class="kicker">Support practical innovation</div><h2>Enjoying the EWF Renewable Energy Studio?</h2><p>If this free resource has helped you learn, plan or explore clean-energy ideas, you can support its continued development with a voluntary cryptocurrency gift. Every contribution is appreciated.</p></div>
+  <div class="row g-3">
+    <div class="col-md-6 col-lg-4">
+      <div class="panel h-100">
+        <div class="d-flex justify-content-between align-items-center mb-3"><span class="badge text-bg-success">TRON network</span><span class="fs-4">₮</span></div>
+        <h3 class="h5 fw-bold">USDT (TRC20)</h3>
+        <p class="small-muted">Send USDT using the TRON / TRC20 network only.</p>
+        <div class="small fw-bold mb-2">Wallet address</div>
+        <div class="p-3 rounded-3 mb-3" style="background:#f3f7f4;border:1px solid #e1e9e3;overflow-wrap:anywhere;font-family:monospace;font-size:.82rem" id="usdtAddress">TBs3C4NQTjdnwgcXmrZiRry2SVJmEeDxEw</div>
+        <button class="btn btn-primary w-100 copy-wallet" type="button" data-copy="usdtAddress">Copy USDT address</button>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="panel h-100">
+        <div class="d-flex justify-content-between align-items-center mb-3"><span class="badge text-bg-success">TRON network</span><span class="fs-4">◎</span></div>
+        <h3 class="h5 fw-bold">TRON (TRX)</h3>
+        <p class="small-muted">Send native TRX using the TRON network.</p>
+        <div class="small fw-bold mb-2">Wallet address</div>
+        <div class="p-3 rounded-3 mb-3" style="background:#f3f7f4;border:1px solid #e1e9e3;overflow-wrap:anywhere;font-family:monospace;font-size:.82rem" id="tronAddress">TBs3C4NQTjdnwgcXmrZiRry2SVJmEeDxEw</div>
+        <button class="btn btn-primary w-100 copy-wallet" type="button" data-copy="tronAddress">Copy TRON address</button>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="panel h-100">
+        <div class="d-flex justify-content-between align-items-center mb-3"><span class="badge text-bg-primary">Solana network</span><span class="fs-4">◎</span></div>
+        <h3 class="h5 fw-bold">Trump (SOL)</h3>
+        <p class="small-muted">Send the Trump token using the Solana network. Confirm the correct token and network in your wallet before sending.</p>
+        <div class="small fw-bold mb-2">Wallet address</div>
+        <div class="p-3 rounded-3 mb-3" style="background:#f3f7f4;border:1px solid #e1e9e3;overflow-wrap:anywhere;font-family:monospace;font-size:.82rem" id="trumpAddress">5UhFryWLTEa8RZmt3JBizxvU4PatSyiC3SAKVafBY6cQ</div>
+        <button class="btn btn-primary w-100 copy-wallet" type="button" data-copy="trumpAddress">Copy Solana address</button>
+      </div>
+    </div>
+  </div>
+  <div class="alert-note mt-3"><strong>Before sending:</strong> Always verify the wallet address and network in your own wallet. USDT on TRC20 and native TRX use the same TRON address shown above, but they are different assets. The Trump address is intended for the Solana network. Do not send funds through a different network. Cryptocurrency transfers are generally irreversible. EWF will never ask for your seed phrase or private keys.</div>
+  <p class="small-muted mt-3 mb-0">Donations are entirely voluntary and are not required to access or use the EWF Renewable Energy Studio. Please make sure you understand network fees and token risks before transferring.</p>
+</div>
+</section>
+
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="row g-4"><div class="col-md-6"><div class="navbar-brand mb-2"><span class="brand-mark">E</span>EWF RENEWABLE ENERGY STUDIO</div><p class="small mb-2">A practical digital learning and preliminary planning resource by EWF | EMIF.</p><small>eWorldfeeders Global Link</small></div><div class="col-md-3"><h3 class="h6 text-white fw-bold">Contact</h3><div class="small mb-2"><a href="mailto:eworldfeedersgloballink@gmail.com">eworldfeedersgloballink@gmail.com</a></div><div class="small"><a href="https://wa.me/2348062331041" target="_blank" rel="noopener">WhatsApp EWF</a></div></div><div class="col-md-3"><h3 class="h6 text-white fw-bold">Explore</h3><div class="small mb-2"><a href="https://eworldfeedersgloballink.netlify.app" target="_blank" rel="noopener">EWF Website</a></div><div class="small"><a href="https://ewfsolutionmarketplace.netlify.app" target="_blank" rel="noopener">EWF Marketplace</a></div></div></div>
+    <hr style="border-color:#ffffff22" class="my-4"><div class="d-flex flex-wrap justify-content-between gap-2"><small>© <span id="year"></span> EWF | EMIF. All rights reserved.</small><small>Learn • Apply • Innovate</small></div>
+  </div>
+</footer>
+<a class="back-top no-print" href="#home" aria-label="Back to top">↑</a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(() => {
+  "use strict";
+  const $ = id => document.getElementById(id);
+  const num = id => Math.max(0, Number($(id)?.value) || 0);
+  const fmt = (n, digits=1) => Number(n || 0).toLocaleString(undefined,{maximumFractionDigits:digits});
+  const state = { appliances: [] };
+  const setText = (id, value) => { if ($(id)) $(id).textContent = value; };
+  const val = id => $(id)?.value ?? "";
+
+  function updateLoad(){
+    const rows = $("applianceRows");
+    rows.innerHTML = "";
+    if(!state.appliances.length) rows.innerHTML = '<tr><td colspan="7" class="text-center text-secondary py-4">Add your first appliance to begin.</td></tr>';
+    let watts=0, energy=0;
+    state.appliances.forEach((a,i)=>{
+      const load=a.watts*a.qty, daily=load*a.hours; watts+=load; energy+=daily;
+      const tr=document.createElement("tr");
+      [a.name,a.qty,`${fmt(a.watts,0)} W`,`${fmt(a.hours,1)} h`,`${fmt(load,0)} W`,`${fmt(daily,0)} Wh`].forEach(t=>{const td=document.createElement("td");td.textContent=t;tr.appendChild(td)});
+      const td=document.createElement("td");const b=document.createElement("button");b.className="remove-row";b.type="button";b.setAttribute("aria-label","Remove appliance");b.textContent="×";b.onclick=()=>{state.appliances.splice(i,1);updateLoad()};td.appendChild(b);tr.appendChild(td);rows.appendChild(tr);
+    });
+    setText("totalLoad",`${fmt(watts,0)} W`);setText("dailyEnergy",`${fmt(energy,0)} Wh`);setText("dailyKwh",`${fmt(energy/1000,2)} kWh`);
+    $("invLoad").value = Math.round(watts);
+    $("batLoad").value = Math.round(watts);
+    $("pvEnergy").value = (energy/1000).toFixed(2);
+    $("ccPv").value = Math.round((energy/1000)/Math.max(.1,num("pvSun"))/(Math.max(1,num("pvDerate"))/100)*1000);
+    updateInverter();updateBattery();updatePV();updateController();
+  }
+  $("addAppliance").addEventListener("click",()=>{
+    const name=val("applianceName").trim(), watts=num("applianceWatts"), qty=Math.max(1,Math.floor(num("applianceQty"))), hours=num("applianceHours");
+    if(!name || watts<=0 || hours<=0 || hours>24){alert("Enter an appliance name, a wattage above zero and usage between 0 and 24 hours.");return;}
+    state.appliances.push({name,watts,qty,hours});
+    $("applianceName").value="";$("applianceWatts").value="";$("applianceQty").value="1";$("applianceHours").value="";
+    updateLoad();
+  });
+
+  function updateInverter(){
+    const load=num("invLoad"), surge=num("invSurge"), margin=num("invMargin");
+    const suggested=load*(1+margin/100);
+    setText("invResult",`${fmt(suggested,0)} W`);
+    updateReportData();
+  }
+  function updateBattery(){
+    const voltage=val("batVoltage")==="Other"?Math.max(1,num("batCustomVoltage")):Number(val("batVoltage"));
+    const load=num("batLoad"), hours=num("batHours"), dod=Math.min(100,num("batDod"))/100, eff=Math.min(100,num("batEff"))/100, margin=num("batMargin")/100;
+    const nominalWh=(load*hours/Math.max(.01,eff)/Math.max(.01,dod))*(1+margin);
+    const ah=nominalWh/Math.max(1,voltage);
+    setText("batAh",`${fmt(ah,1)} Ah`);setText("batKwh",`${fmt(nominalWh/1000,2)} kWh`);setText("batUsable",`${fmt(nominalWh*dod*eff/1000,2)} kWh`);
+    updateReportData();
+  }
+  function updatePV(){
+    const energy=num("pvEnergy"), sun=num("pvSun"), factor=Math.min(100,num("pvDerate"))/100, module=num("pvModule");
+    const kwp=energy/Math.max(.01,sun*factor), count=Math.ceil(kwp*1000/Math.max(1,module));
+    setText("pvSize",`${fmt(kwp,2)} kWp`);setText("pvCount",`${count} panels`);setText("pvInstalled",`${fmt(count*module,0)} W`);
+    updateReportData();
+  }
+  function updateController(){
+    const power=num("ccPv"), voltage=Math.max(1,num("ccBattery")), margin=num("ccMargin")/100, required=power/voltage*(1+margin), rated=num("ccRating");
+    setText("ccCurrent",`${fmt(required,1)} A`);setText("ccEntered",`${fmt(rated,0)} A`);
+    const ok=rated>=required && rated>0;
+    setText("ccStatus",rated>0?(ok?"Within rating":"Check rating"):"Not set");
+    setText("ccStatusNote",rated>0?(ok?"Entered output rating meets this simplified current estimate":"Entered rating is below the simplified estimate"):"Enter a controller rating");
+    $("ccStatus").style.color=ok?"#00843d":"#a15c00";
+    updateReportData();
+  }
+  ["invLoad","invSurge","invMargin"].forEach(id=>$(id).addEventListener("input",updateInverter));
+  ["batLoad","batHours","batVoltage","batCustomVoltage","batDod","batEff","batMargin"].forEach(id=>$(id).addEventListener("input",updateBattery));
+  ["pvEnergy","pvSun","pvDerate","pvModule"].forEach(id=>$(id).addEventListener("input",updatePV));
+  ["ccPv","ccBattery","ccMargin","ccRating"].forEach(id=>$(id).addEventListener("input",updateController));
+
+  function currencyCode(){return val("currency")==="Other"?(val("customCurrency").trim().toUpperCase()||"CUSTOM"):val("currency")}
+  function money(amount,code=currencyCode()){
+    const known=["NGN","USD","GBP","EUR","GHS","KES","ZAR","INR","CAD","AUD","AED","XOF","XAF","TZS","UGX","RWF","JPY","CNY","BRL","CHF","SAR","QAR"];
+    try { if(known.includes(code)) return new Intl.NumberFormat(undefined,{style:"currency",currency:code,maximumFractionDigits:2}).format(amount); } catch(e){}
+    return `${code} ${fmt(amount,2)}`;
+  }
+  function updateCurrency(){
+    const custom=val("currency")==="Other";
+    $("customCurrencyWrap").hidden=!custom;
+    setText("currencyLabel",currencyCode());
+    updateConversion();updateReportData();
+  }
+  function updateConversion(){
+    const amount=num("quoteAmount"), rate=num("exchangeRate"), from=val("fromCurrency"), to=currencyCode();
+    setText("convertedCost",amount>0&&rate>0?`${money(amount*rate,to)} estimated (${fmt(amount,2)} ${from} × ${fmt(rate,5)})`:"Enter quote and rate");
+  }
+  ["currency","customCurrency"].forEach(id=>$(id).addEventListener("input",updateCurrency));
+  ["fromCurrency","quoteAmount","exchangeRate"].forEach(id=>$(id).addEventListener("input",updateConversion));
+  $("estimatedCost").addEventListener("input",updateReportData);
+  $("costNotes").addEventListener("input",updateReportData);
+  ["projectName","projectLocation"].forEach(id=>$(id).addEventListener("input",updateReportData));
+
+  function reportHtml(){
+    const project=val("projectName").trim()||"Solar project (not specified)";
+    const location=val("projectLocation").trim()||"Not specified";
+    const load=state.appliances.reduce((s,a)=>s+a.watts*a.qty,0);
+    const energy=state.appliances.reduce((s,a)=>s+a.watts*a.qty*a.hours,0)/1000;
+    const cost=num("estimatedCost"), code=currencyCode();
+    const rows=[
+      ["Project",project],["Location",location],["Preferred currency",code],
+      ["Appliances listed",String(state.appliances.length)],
+      ["Connected appliance load",`${fmt(load,0)} W`],
+      ["Daily energy from appliance list",`${fmt(energy,2)} kWh/day`],
+      ["Preliminary inverter rating",`${fmt(num("invLoad")*(1+num("invMargin")/100),0)} W`],
+      ["Battery nominal capacity",`${$("batAh").textContent} at ${val("batVoltage")==="Other"?val("batCustomVoltage"):val("batVoltage")} V`],
+      ["Estimated PV array",`${$("pvSize").textContent} (${ $("pvCount").textContent })`],
+      ["Charge controller estimate",`${$("ccCurrent").textContent}; entered rating ${$("ccEntered").textContent}`]
+    ];
+    if(cost>0) rows.push(["Estimated project cost",money(cost,code)]);
+    if(val("costNotes").trim()) rows.push(["Cost notes",val("costNotes").trim()]);
+    const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+    return rows.map(([a,b])=>`<div class="report-row"><span>${esc(a)}</span><strong>${esc(b)}</strong></div>`).join("");
+  }
+  function updateReportData(){
+    if(!$("reportDetails")) return;
+    $("reportDetails").innerHTML=reportHtml();
+    setText("reportDate",new Date().toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"}));
+  }
+  $("refreshReport").addEventListener("click",()=>{updateReportData();$("reportContent").scrollIntoView({behavior:"smooth",block:"start"})});
+  $("printReport").addEventListener("click",()=>{updateReportData();window.print()});
+
+  document.querySelectorAll(".copy-wallet").forEach(button=>{
+    button.addEventListener("click",async()=>{
+      const address=$(button.dataset.copy)?.textContent?.trim();
+      if(!address) return;
+      try{
+        await navigator.clipboard.writeText(address);
+        const original=button.textContent;
+        button.textContent="Address copied";
+        button.classList.add("btn-success");
+        button.classList.remove("btn-primary");
+        setTimeout(()=>{button.textContent=original;button.classList.remove("btn-success");button.classList.add("btn-primary")},1800);
+      }catch(error){
+        window.prompt("Copy this wallet address:",address);
+      }
+    });
+  });
+
+  $("year").textContent=new Date().getFullYear();
+  updateCurrency();updateLoad();updateInverter();updateBattery();updatePV();updateController();updateReportData();
+})();
+</script>
+</body>
+</html>
